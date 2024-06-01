@@ -18,7 +18,7 @@ function CardList({ cardList, cards, index }) {
         >
           <Droppable 
             droppableId={cardList.id} 
-            type="CARD_ITEM"
+            type="CARD"
           >
             {(provided, snapshot) => (
                 <Card 
@@ -43,7 +43,6 @@ function CardList({ cardList, cards, index }) {
                   >
                     {cards.map((cardId, cardIndex) => {
                       const cardItem = dataSource.cards[cardId];
-                      console.log('cardId: ', cardIndex)
                       return (
                         <CardItem
                           key={cardItem.id}

@@ -1,16 +1,21 @@
 // hash object
 export const dataSource =  {
-  columns: ['list1', 'list2'],
+  columns: ['list1', 'list2', "list3"],
   lists: {
     'list1': {
       id: 'list1',
       title: 'list-1',
-      cards: ['card-1-list1', 'card-2-list1']
+      cards: ['card-1-list1', 'card-2-list1', 'card-3-list1']
     },
     'list2': {
       id: 'list2',
       title: 'list-2',
-      cards: ['card-1-list2']
+      cards: ['card-1-list2', 'card-2-list2']
+    },
+    'list3': {
+      id: 'list3',
+      title: 'list-3',
+      cards: []
     }
   },
   cards: {
@@ -26,12 +31,24 @@ export const dataSource =  {
       description: 'card 2 of list 1',
       image: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
     },
+    'card-3-list1': {
+      id: 'card-3-list1',
+      title: 'card 3 of list 1',
+      description: 'card 3 of list 1',
+      image: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+    },
     'card-1-list2': {
       id: 'card-1-list2',
       title: 'card 1 of list 2',
       description: 'card 1 of list 2',
       image: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-    }
+    },
+    'card-2-list2': {
+      id: 'card-2-list2',
+      title: 'card 2 of list 2',
+      description: 'card 1 of list 2',
+      image: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+    },
   }
 }
 
