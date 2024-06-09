@@ -84,16 +84,41 @@ export default  function AppProvider({ children }) {
     }
   }, [todos]);
 
-  function deleteItem(cardId) {
-    console.log('deleteItem:', cardId)
+  function deleteItem(cardId, listId) {
+    // listId = list1
+    const listItem = todos.lists[listId];
+    const cards = listItem.cards;
+
+    setTodos((prevState) => {
+      return {
+        ...prevState,
+        lists: {
+          ...prevState.lists,
+          [listId]: {
+            ...listItem,
+            cards: cards.filter(card => card !== cardId)
+          } 
+        },
+      };
+    });
   }
+
+  function deleteList(listId) {
+    setTodos(prevState => ({
+      ...prevState,
+      columns: prevState.columns.filter(item => item !== listId)
+    }))
+  }
+
+  console.log('todos: ', todos)
 
   return (
     <AppContext.Provider
       value={{
         todos,
         onDragEnd,
-        deleteItem
+        deleteItem,
+        deleteList
       }}
     >
       {children}

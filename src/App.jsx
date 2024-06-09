@@ -9,12 +9,7 @@ import { useAppContext } from './context/AppContext';
 
 function App() {
   const { todos, onDragEnd } = useAppContext();
-
   
-  console.log("App", {
-    todos
-  })
-
   return (
     <>
       <HeaderComponent />

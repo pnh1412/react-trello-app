@@ -7,7 +7,7 @@ import { useAppContext } from '../context/AppContext';
 
 const { Meta } = Card;
 
-function CardItem({ cardItem, index }) {
+function CardItem({ cardItem, listId, index }) {
 
   const { deleteItem } = useAppContext();
 
@@ -32,7 +32,7 @@ function CardItem({ cardItem, index }) {
             }
             actions={[
               <EyeOutlined key="eye"  />,
-              <DeleteOutlined key="delete" onClick={() => deleteItem(cardItem.id)} />
+              <DeleteOutlined key="delete" onClick={() => deleteItem(cardItem.id, listId)} />
             ]}
           >
             <Meta

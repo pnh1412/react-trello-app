@@ -5,9 +5,10 @@ import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 
 import CardItem from './CardItem';
 import { dataSource } from '../mocks/data';
+import { useAppContext } from '../context/AppContext';
 
 function CardList({ cardList, cards, index }) {
-  console.log(cards)
+  const { deleteList } = useAppContext();
   return (
     <Draggable draggableId={cardList.id} index={index}>
       {(provided, snapshot) => (
@@ -31,7 +32,7 @@ function CardList({ cardList, cards, index }) {
                         <Button shape="circle" icon={<PlusOutlined />} />
                       </Tooltip>
                       <Tooltip title="Delete">
-                        <Button shape="circle" icon={<DeleteOutlined />} />
+                        <Button shape="circle" icon={<DeleteOutlined />} onClick={() => deleteList(cardList.id)} />
                       </Tooltip>
                     </Space>
                   }
@@ -49,6 +50,7 @@ function CardList({ cardList, cards, index }) {
                           key={cardItem.id}
                           index={cardIndex}
                           cardItem={cardItem}
+                          listId={cardList.id}
                         />
                       )
                     })}
