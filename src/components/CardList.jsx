@@ -7,6 +7,7 @@ import CardItem from './CardItem';
 import { dataSource } from '../mocks/data';
 
 function CardList({ cardList, cards, index }) {
+  console.log(cards)
   return (
     <Draggable draggableId={cardList.id} index={index}>
       {(provided, snapshot) => (
